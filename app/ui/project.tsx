@@ -1,5 +1,9 @@
 import Link from 'next/link'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+
 export default function Project(props: { title: string, description: string, github?: string, link?: string }) {
 
   let link = props.link ?? false
@@ -9,7 +13,7 @@ export default function Project(props: { title: string, description: string, git
   if (link)
     linkComponent = <>
       <Link href={link} className='text-2xl' target="_blank">
-        
+        <FontAwesomeIcon icon={faGlobe} />
       </Link>
     </>
 
@@ -17,7 +21,7 @@ export default function Project(props: { title: string, description: string, git
   if (github)
     githubComponent = <>
       <Link href={github} className='text-2xl' target="_blank">
-        
+        <FontAwesomeIcon icon={faGithub} />
       </Link>
     </>
 
